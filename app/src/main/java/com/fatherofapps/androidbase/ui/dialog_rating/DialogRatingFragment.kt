@@ -5,30 +5,34 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.fatherofapps.androidbase.R
+import com.fatherofapps.androidbase.databinding.FragmentDialogRatingBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DialogRatingFragment : DialogFragment() {
+
+    private lateinit var dataBinding: FragmentDialogRatingBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        getDialog()!!.getWindow()?.setBackgroundDrawableResource(R.drawable.round_corner);
-        val dialog = inflater.inflate(R.layout.fragment_dialog_rating, container, false)
+        dialog!!.window?.setBackgroundDrawableResource(R.drawable.dialog_round_corner);
+        dataBinding = FragmentDialogRatingBinding.inflate(inflater)
 
-        val imgReact : ImageView = dialog.findViewById(R.id.img_reaction)
-        val tvTitle : TextView = dialog.findViewById(R.id.tv_title)
+        val imgReact = dataBinding.imgReaction
+        val tvTitle = dataBinding.tvTitle
 
-        val btn1Star : ImageButton = dialog.findViewById(R.id.btn_1star)
-        val btn2Star : ImageButton = dialog.findViewById(R.id.btn_2star)
-        val btn3Star : ImageButton = dialog.findViewById(R.id.btn_3star)
-        val btn4Star : ImageButton = dialog.findViewById(R.id.btn_4star)
-        val btn5Star : ImageButton = dialog.findViewById(R.id.btn_5star)
+        val btn1Star = dataBinding.btn1star
+        val btn2Star = dataBinding.btn2star
+        val btn3Star = dataBinding.btn3star
+        val btn4Star = dataBinding.btn4star
+        val btn5Star = dataBinding.btn5star
+
+        val btnRate = dataBinding.btnRate
+        val btnExit = dataBinding.btnExit
 
         btn1Star.setImageResource(R.drawable.star_not_rate)
         btn2Star.setImageResource(R.drawable.star_not_rate)
@@ -39,9 +43,6 @@ class DialogRatingFragment : DialogFragment() {
         imgReact.setImageResource(R.drawable.react_start)
         tvTitle.text = "Do you like the app?"
         tvTitle.setTypeface(tvTitle.typeface, Typeface.BOLD)
-
-        val btnRate : Button = dialog.findViewById(R.id.btn_rate)
-        val btnExit : Button = dialog.findViewById(R.id.btn_exit)
 
         btnRate.setOnClickListener {
             dismiss()
@@ -97,7 +98,7 @@ class DialogRatingFragment : DialogFragment() {
             tvTitle.text = "We love you too!"
         }
 
-        return dialog
+        return dataBinding.root
     }
 
 
