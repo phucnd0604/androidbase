@@ -1,5 +1,6 @@
 package com.fatherofapps.androidbase.ui.permission
 
+import android.graphics.Typeface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,7 +22,6 @@ class PermissionFragment : Fragment() {
     ): View {
         dataBinding = FragmentPermissionBinding.inflate(inflater)
         dataBinding.lifecycleOwner = viewLifecycleOwner
-
 
         return dataBinding.root
     }
