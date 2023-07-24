@@ -254,7 +254,6 @@ class HomeFragment : BaseFragment() {
         return viewmodel.mImageMaxHeight
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
     fun getSaveImageFilePath(): String {
         val YOUR_FOLDER_NAME = DbConstants.getAppLable(requireContext())
         val mediaStorageDir = File(
@@ -281,8 +280,7 @@ class HomeFragment : BaseFragment() {
         bitmap = if (bWidth > bHeight) {
             val imageHeight = Math.abs(maxSize * (bitmap.width.toFloat() / bitmap.height.toFloat())).toInt()
             Bitmap.createScaledBitmap(bitmap, maxSize, imageHeight, true)
-        }
-        else {
+        } else {
             val imageWidth = Math.abs(maxSize * (bitmap.width.toFloat() / bitmap.height.toFloat())).toInt()
             Bitmap.createScaledBitmap(bitmap, imageWidth, maxSize, true)
         }
@@ -295,7 +293,7 @@ class HomeFragment : BaseFragment() {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fOut)
             fOut.flush()
             fOut.close()
-            showToast("Saved to $mediaStorageDir.path")
+            showToast(getString(R.string.saved_successfully))
         }
         catch (e: Exception) {
             e.printStackTrace()
