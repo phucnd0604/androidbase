@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:padding="16dp"
+        android:background="@color/white"
         android:layout_height="match_parent"
         android:orientation="vertical">
         <LinearLayout
@@ -31,8 +32,11 @@
                 android:lineSpacingExtra="28.6dp"
                 android:text="Permission"/>
             <TextView
-                android:layout_width="22dp"
+                android:id="@+id/btn_go"
+                android:layout_width="wrap_content"
                 android:text="Go"
+                android:paddingHorizontal="20dp"
+                android:backgroundTint="@color/white"
                 android:textSize="16sp"
                 android:gravity="center"
                 android:textColor="#7879F1"

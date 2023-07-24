@@ -1,7 +1,9 @@
 package com.fatherofapps.androidbase.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.room.Room
+import com.fatherofapps.androidbase.common.AppSharePreference
 import com.fatherofapps.androidbase.data.database.AppDatabase
 import com.fatherofapps.androidbase.data.database.daos.CustomerDao
 import dagger.Module
@@ -25,6 +27,12 @@ class DatabaseModule {
     @Provides
     fun provideCustomerDao(appDatabase: AppDatabase): CustomerDao{
         return appDatabase.customerDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences{
+        return context.getSharedPreferences(AppSharePreference.APP_SHARE_KEY, Context.MODE_PRIVATE)
     }
 
 }

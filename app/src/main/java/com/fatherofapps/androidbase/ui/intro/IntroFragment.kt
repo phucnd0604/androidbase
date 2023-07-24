@@ -27,9 +27,10 @@ class IntroFragment : BaseFragment() {
         dataBinding.lifecycleOwner = viewLifecycleOwner
 
         val carouselItems = listOf(
-            R.drawable.no_image,
-            R.drawable.no_image,
-            R.drawable.no_image,
+            R.drawable.intro1,
+            R.drawable.intro2,
+            R.drawable.intro3,
+            R.drawable.intro4
             // Add more image resources or URLs here
         )
 
@@ -44,6 +45,7 @@ class IntroFragment : BaseFragment() {
         btnStart.setOnClickListener {
             navigateToPage(R.id.permissionFragment)
         }
+
         return dataBinding.root
     }
 }

@@ -7,9 +7,10 @@ import javax.inject.Inject
 class AppSharePreference @Inject constructor(private val context: Context) {
     companion object{
         const val APP_SHARE_KEY = "com.fatherofapps.androidbase"
+        const val FIRST_LAUNCH = "com.fatherofapps.androidbase.first_launch"
     }
 
-    private fun getSharedPreferences(): SharedPreferences?{
+    fun getSharedPreferences(): SharedPreferences?{
         return context.getSharedPreferences(APP_SHARE_KEY,Context.MODE_PRIVATE)
     }
 

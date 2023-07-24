@@ -167,7 +167,7 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0"
 
     // dots indicator
-    implementation "com.tbuonomo:dotsindicator:4.3"
+    implementation "com.tbuonomo:dotsindicator:5.0"
 
     androidTestImplementation "androidx.test.espresso:espresso-core:3.4.0"
     androidTestImplementation "junit:junit:$junit_version"
