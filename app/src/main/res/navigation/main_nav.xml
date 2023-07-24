@@ -18,5 +18,9 @@
         android:id="@+id/introFragment"
         android:name="com.fatherofapps.androidbase.ui.intro.IntroFragment"
         android:label="IntroFragment"/>
+    <fragment
+        android:id="@+id/permissionFragment"
+        android:name="com.fatherofapps.androidbase.ui.permission.PermissionFragment"
+        android:label="PermissionFragment"/>
 
 </navigation>

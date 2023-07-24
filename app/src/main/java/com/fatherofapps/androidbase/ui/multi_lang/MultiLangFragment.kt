@@ -23,7 +23,7 @@ class MultiLangFragment : BaseFragment() {
         dataBinding = FragmentMultiLangBinding.inflate(inflater)
         dataBinding.lifecycleOwner = viewLifecycleOwner
 
-        dataBinding.btnChooseLang.setOnClickListener {
+        dataBinding.btnGoIntro.setOnClickListener {
             navigateToPage(R.id.introFragment)
         }
 
