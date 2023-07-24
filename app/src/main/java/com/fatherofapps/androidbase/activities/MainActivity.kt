@@ -27,9 +27,11 @@ class MainActivity : BaseActivity(){
         setContentView(R.layout.activity_main)
         loadingLayout = findViewById(R.id.loadingLayout)
         if (preferences.getBoolean(AppSharePreference.FIRST_LAUNCH, true)) {
-
             nav().popBackStack(R.id.searchFragment, true)
             nav().navigate(R.id.introFragment)
+        } else {
+            nav().popBackStack(R.id.searchFragment, true)
+            nav().navigate(R.id.homeFragment)
         }
     }
 
