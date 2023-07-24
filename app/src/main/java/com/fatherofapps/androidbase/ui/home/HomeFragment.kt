@@ -62,6 +62,10 @@ class HomeFragment : BaseFragment() {
         dataBinding.lifecycleOwner = viewLifecycleOwner
         registerObserverLoadingEvent(viewmodel, viewLifecycleOwner)
         setupLanguage()
+
+//        dataBinding.btnNextScr.setOnClickListener {
+//            navigateToPage(R.id.multiLangFragment)
+//        }
         return dataBinding.root
     }
 
@@ -349,5 +353,6 @@ class HomeFragment : BaseFragment() {
     private fun showToast(s: String) {
         Toast.makeText(context, s, Toast.LENGTH_SHORT).show()
     }
+
 
 }

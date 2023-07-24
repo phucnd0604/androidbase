@@ -1,12 +1,15 @@
+
 package com.example.ap_translator.models
 
 import android.media.Image
+
 import android.os.Build
 import android.os.Parcel
 import android.os.Parcelable
 import androidx.annotation.RequiresApi
 
-public data class LanguageTrans(
+
+data class LanguageTrans(
     val name: String?,
     val code: String?,
     val avatar: Int?,
