@@ -11,12 +11,12 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/btn_next_scr"
+            android:id="@+id/btn_choose_lang"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Go to multi lang"
+            android:text="Go to intro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
